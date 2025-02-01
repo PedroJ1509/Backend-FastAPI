@@ -27,3 +27,5 @@ def listar_articulos(id: int):
         return {"Articulo_ID": articulo[0], "Articulo_CD": articulo[1], "Articulo_Desc": articulo[2]}
     else:
         return {"error": "Artículo no encontrado"}
+    
+    

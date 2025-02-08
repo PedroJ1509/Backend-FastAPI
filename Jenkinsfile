@@ -6,8 +6,7 @@ pipeline {
         DOCKER_TAG = "latest"
         SERVER_USER = "root"
         SERVER_IP = "159.203.123.66"
-        NEXUS_USER = "admin"
-        NEXUS_PASS = "PedroJ85"
+        SSH_PASSPHRASE = "PedroJ85"
     }
     stages {
         stage('Checkout') {
@@ -24,8 +23,8 @@ pipeline {
         }
         stage('Login to Nexus') {
             steps {
-                echo "🔑 Autenticando en Nexus..."
-                bat "echo %NEXUS_PASS% | docker login -u %NEXUS_USER% --password-stdin %DOCKER_REGISTRY%"
+                echo "🔑 Iniciando sesión en Nexus..."
+                sh "echo '$SSH_PASSPHRASE' | docker login -u admin --password-stdin http://$DOCKER_REGISTRY"
             }
         }
         stage('Push to Nexus') {

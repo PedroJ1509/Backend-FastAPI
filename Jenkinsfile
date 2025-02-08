@@ -6,8 +6,8 @@ pipeline {
         DOCKER_TAG = "latest"                    // Tag de la imagen
         SERVER_USER = "root"                      // Usuario del servidor
         SERVER_IP = "159.203.123.66"              // Dirección IP del servidor
-        NEXUS_USER = "admin"                      // Usuario de Nexus
-        NEXUS_PASS = "PedroJ85"                   // Contraseña de Nexus
+        NEXUS_USER = "admin"                      // Usuario de Nexus 
+        NEXUS_PASS = "PedroJ85"                   // Contraseña de Nexus 
     }
     stages {
         stage('Checkout') {

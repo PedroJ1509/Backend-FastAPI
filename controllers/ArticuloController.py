@@ -10,7 +10,7 @@ def obtener_articulos():
     cursor.execute("SELECT Articulo_ID,Articulo_CD, Articulo_Desc FROM Articulo where Articulo_Status=1 and Articulo_SiKit=1")
     articulos = cursor.fetchall()
     conexion.close()
-    return [Articulo(Articulo_ID=a[0], Articulo_CD=a[1], Articulo_Desc=a[2]) for a in articulos]
+    return [Articulo(Articulo_ID=a[0], Articulo_CD=a[1], Articulo_Desc=a[2], Costo=a[3]) for a in articulos]
 
 def listar_articulos(id: int):
     print('este es el id:', id)

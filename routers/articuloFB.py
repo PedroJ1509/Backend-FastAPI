@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from controllers.ArticuloFBController import create_articulo, get_articulo, get_all_articulos
+from controllers.ArticuloFBController import create_articulo, get_articulo, get_all_articulos, incrementar_precios_articulos
 from models.articulo import Articulo
+from models.incrementoPrecioRequest import IncrementoPrecioRequest
 
 articuloFB = APIRouter()
 
@@ -20,3 +21,8 @@ async def obtener_articulo(articulo_id: int):
 @articuloFB.get("/articulosFB/")
 async def obtener_todos_los_articulos():
     return get_all_articulos()
+
+#Endpoint para aumentar precio a los articulos
+@articuloFB.post("/incrementarPrecio")
+async def incrementarPrecioArticulos(request: IncrementoPrecioRequest):
+    return await incrementar_precios_articulos(request)

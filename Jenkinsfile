@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo "🚀 Desplegando aplicación en el servidor..."
                 script {
-                    sshagent(credentials: ['ssh-server-credentials']) {
+                    sshagent(credentials: ['ssh-server']) {
                         sh """
                         ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'ENDSSH'
                         echo "📥 Descargando la última imagen de Docker..."

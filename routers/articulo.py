@@ -9,7 +9,6 @@ articulo = APIRouter()
 def get_articulos():
     return obtener_articulos()
 
-
 @articulo.get("/articulos/{id}")
 def get_articulo(id: int):
     print(id)

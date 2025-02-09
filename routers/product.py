@@ -16,7 +16,6 @@ products = [{
         "quantity": 4
     }]
 
-
 @router.get("/products")
 def get_products():
     return products

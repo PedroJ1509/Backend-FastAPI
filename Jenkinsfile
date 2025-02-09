@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_REGISTRY = "159.203.123.66:8090"  // IP y puerto del registro de Nexus
-        DOCKER_IMAGE = "image_fastapi"           // Nombre de la imagen Docker
+        DOCKER_IMAGE = "fastapi-application"           // Nombre de la imagen Docker
         DOCKER_TAG = "latest"                    // Tag de la imagen
         SERVER_USER = "root"                     // Usuario SSH del servidor
         SERVER_IP = "159.203.123.66"             // IP del servidor destino

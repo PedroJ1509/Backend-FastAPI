@@ -4,7 +4,7 @@ from controllers.ArticuloFBController import create_articulo, get_articulo, get_
 from models.articulo import Articulo
 from models.incrementoPrecioRequest import IncrementoPrecioRequest
 
-articuloFB = APIRouter()
+articuloFB = APIRouter()# Definir un router
 
 # Endpoint para crear un artículo
 @articuloFB.post("/articulosFB/")

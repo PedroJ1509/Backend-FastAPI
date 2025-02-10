@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "📥 Clonando código fuente desde GitHub..."
-                git branch: 'develop', credentialsId: 'github-credentials', url: 'https://github.com/PedroJ1509/Backend-FastAPI.git'
+                git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/PedroJ1509/Backend-FastAPI.git'
             }
         }
         stage('Build Docker Image') {
